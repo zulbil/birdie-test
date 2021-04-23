@@ -3,7 +3,10 @@ import {
   AppContainer,
   GlobalStyle,
   StyledCard,
-  StyledCircularProgress
+  StyledCircularProgress,
+  GridContainerStyle,
+  GridItemStyle,
+  GridItemBackground
 } from "./style";
 import { ErrorText } from "../ErrorText";
 import { TextField, Button } from "@material-ui/core";
@@ -41,33 +44,47 @@ export default class App extends React.Component<Props, ComponentState> {
   public render() {
     const { isFetching, error } = this.props;
     return (
-      <>
-        <GlobalStyle />
-        {isFetching ? <StyledCircularProgress /> : null}
-        <AppContainer isFetching={this.props.isFetching}>
-          <StyledCard>
-            <Title>Login to the service</Title>
-            <Subtitle>Use code we gave you to login to the service</Subtitle>
-            <TextField
-              error={error !== ""}
-              label="Code"
-              placeholder="Code"
-              value={this.state.id}
-              onChange={this.handleCodeChange}
-              margin="normal"
-              variant="outlined"
-            />
-            <ErrorText>{error}</ErrorText>
-            <Button
-              color="primary"
-              variant="outlined"
-              onClick={this.handleButtonClick}
-            >
-              Sign in
-            </Button>
-          </StyledCard>
-        </AppContainer>
-      </>
+        <>
+          <AppContainer isFetching={this.props.isFetching}>
+            <GridContainerStyle>
+              <GridItemBackground>
+                <div className="hero-text">
+                  <h1 className="hero-title">Care with confidence</h1>
+                  <p className="hero-sub-title">
+                    Discover Birdie, your complete homecare software solution. Designed to
+                  give you better visibility over your care and support older adults to live happily at home.
+                  </p>
+                  <div className="bg-hand" />
+                </div>
+              </GridItemBackground>
+              <GridItemStyle>
+                  <GlobalStyle />
+                  {isFetching ? <StyledCircularProgress /> : null}
+                    <StyledCard>
+                      <Title>Login </Title>
+                      <Subtitle>Use code we gave you to login to the service</Subtitle>
+                      <TextField
+                          error={error !== ""}
+                          label="Code"
+                          placeholder="Code"
+                          value={this.state.id}
+                          onChange={this.handleCodeChange}
+                          margin="normal"
+                          variant="outlined"
+                      />
+                      <ErrorText>{error}</ErrorText>
+                      <Button
+                          color="primary"
+                          variant="outlined"
+                          onClick={this.handleButtonClick}
+                      >
+                        Sign in
+                      </Button>
+                    </StyledCard>
+              </GridItemStyle>
+            </GridContainerStyle>
+          </AppContainer>
+        </>
     );
   }
 
