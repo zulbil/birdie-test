@@ -107,7 +107,7 @@ export const GridItemBackground = styled.div`
           font-weight: 400;
       }
       .bg-hand {
-        background-image: url('./assets/images/Hands_we_care.svg');
+        background-image: url('./../../assets/images/Hands_We_Care.svg');
       }
   }
 `;

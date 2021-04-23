@@ -55,7 +55,10 @@ export default class App extends React.Component<Props, ComponentState> {
                     Discover Birdie, your complete homecare software solution. Designed to
                   give you better visibility over your care and support older adults to live happily at home.
                   </p>
-                  <div className="bg-hand" />
+                  <div className="bg-hand">
+                    {/* tslint:disable-next-line:max-line-length */}
+                    <img src="https://assets.website-files.com/5d80c03f1edd7bd68fcdb623/5d9c8af856a5b0065ddac102_Hands%20We%20Care.svg" alt="Holding hands illustration" />
+                  </div>
                 </div>
               </GridItemBackground>
               <GridItemStyle>
