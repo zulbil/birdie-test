@@ -20,16 +20,19 @@ sequelize.addModels([__dirname + "/models/*.model.ts"]);
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../frontend/build')));
+if(process.env.NODE_DEV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
+}
 
 app.use(cors());
 app.use(helmet());
 app.use(bodyParser.json());
 
-// tslint:disable-next-line:variable-name
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
-});
+if(process.env.NODE_DEV === 'production') {
+  app.get('*', (_req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+  });
+}
 
 app.use("/auth", authController);
 app.use("/stats", statisticsController);
