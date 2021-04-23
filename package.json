@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/zulbil/birdie-test/issues"
   },
-  "homepage": "https://github.com/zulbil/birdie-test#readme"
+  "homepage": "https://github.com/zulbil/birdie-test#readme",
+  "engines": {
+    "node": "14.1.0"
+  }
 }
