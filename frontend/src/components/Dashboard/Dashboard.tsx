@@ -34,7 +34,7 @@ export default class Dashboard extends React.Component<Props, ComponentState> {
           container={true}
           spacing={1}
           direction="row"
-          style={{ minHeight: "100vh" }}
+          style={{ minHeight: "100vh", marginTop: "2rem" }}
         >
           <Grid item={true} xs={2} />
           <Grid 

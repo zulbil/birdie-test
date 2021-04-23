@@ -14,4 +14,5 @@ export const LogoutLink = styled.a`
     font-size: 1.2rem;
     color: #00254d;
     text-transform: uppercase;
+    cursor : pointer;
 `;

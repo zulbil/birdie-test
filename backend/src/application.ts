@@ -5,6 +5,7 @@ import * as bodyParser from "body-parser";
 import * as helmet from "helmet";
 import * as cors from "cors";
 
+import * as path from "path";
 import { Sequelize } from "sequelize-typescript";
 import { authController } from "./controllers/auth.controller";
 import { statisticsController } from "./controllers/statistics.controller";
@@ -19,9 +20,16 @@ sequelize.addModels([__dirname + "/models/*.model.ts"]);
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
 app.use(cors());
 app.use(helmet());
 app.use(bodyParser.json());
+
+// tslint:disable-next-line:variable-name
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+});
 
 app.use("/auth", authController);
 app.use("/stats", statisticsController);
