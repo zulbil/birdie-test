@@ -32,6 +32,9 @@ export const StyledCard = styled.div`
   width: 50%;
   border: none;
   border-radius: 0px;
+  .logo {
+    margin-bottom: 30px;
+  }
 `;
 
 export const StyledCircularProgress = styled(CircularProgress)`
