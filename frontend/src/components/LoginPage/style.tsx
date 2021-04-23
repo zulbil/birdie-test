@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { Card, CircularProgress } from "@material-ui/core";
+import { CircularProgress } from "@material-ui/core";
 
 interface Props {
   isFetching: boolean;
@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
     height: 100vh;
     margin: 0 !important;
     font-family: serif;
-    background-color: #F9F9F9;
     > div {
       height: 100%;
     }
@@ -27,10 +26,12 @@ export const AppContainer = styled.div`
   filter: ${(props: Props) => (props.isFetching ? "blur(8px)" : "blur(0px)")};
 `;
 
-export const StyledCard = styled(Card)`
+export const StyledCard = styled.div`
   text-align: center;
   padding: 2%;
   width: 50%;
+  border: none;
+  border-radius: 0px;
 `;
 
 export const StyledCircularProgress = styled(CircularProgress)`
@@ -55,7 +56,24 @@ export const GridItemStyle = styled.div`
   height: 100%;
   align-items: center;
 `;
-
+export const LoginButton = styled.button`
+margin-top: .5rem;
+margin-bottom: .5rem;
+margin-left: 30px;
+padding: 1rem 1.5rem;
+border: 4px #000;
+border-radius: 4px;
+background-color: #0459b4;
+box-shadow: 1px 1px 4px 0 rgb(0 0 0 / 25%);
+font-size: 1rem;
+font-weight: 500;
+text-align: center;
+min-width: 10rem;
+padding: .5rem 1rem;
+display: inline-block;
+padding: 9px 15px;
+color: #fff;
+`;
 export const GridItemBackground = styled.div`
   width: 50%;
   display: flex;

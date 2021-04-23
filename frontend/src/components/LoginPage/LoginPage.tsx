@@ -6,10 +6,11 @@ import {
   StyledCircularProgress,
   GridContainerStyle,
   GridItemStyle,
-  GridItemBackground
+  GridItemBackground,
+  LoginButton
 } from "./style";
 import { ErrorText } from "../ErrorText";
-import { TextField, Button } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 import { Id } from "@store/auth/types";
 import Title from "../Title";
 import Subtitle from "../Subtitle";
@@ -71,15 +72,14 @@ export default class App extends React.Component<Props, ComponentState> {
                           onChange={this.handleCodeChange}
                           margin="normal"
                           variant="outlined"
+                          fullWidth={true}
                       />
                       <ErrorText>{error}</ErrorText>
-                      <Button
-                          color="primary"
-                          variant="outlined"
+                      <LoginButton
                           onClick={this.handleButtonClick}
                       >
                         Sign in
-                      </Button>
+                      </LoginButton>
                     </StyledCard>
               </GridItemStyle>
             </GridContainerStyle>
