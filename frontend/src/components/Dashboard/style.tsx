@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 !important;
     padding: 0 !important;
     height: 100vh;
+    font-family: sans-serif;
     background-color: #F9F9F9;
     > div {
       height: 100%;

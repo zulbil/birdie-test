@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     height: 100vh;
     margin: 0 !important;
-    font-family: serif;
+    font-family: sans-serif;
     > div {
       height: 100%;
     }
